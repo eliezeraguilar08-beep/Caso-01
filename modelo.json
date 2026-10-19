@@ -1,0 +1,37 @@
+{
+  "features": [
+    "consultas_web",
+    "inversion_publicidad_soles",
+    "campana_escolar"
+  ],
+  "intercept": 1.5384729585592574,
+  "coefficients": {
+    "consultas_web": 0.3463033562740661,
+    "inversion_publicidad_soles": 0.006699109182241925,
+    "campana_escolar": 5.018213367145449
+  },
+  "metrics": {
+    "mae_test": 2.954102420565232,
+    "r2_test": 0.7910735136647091
+  },
+  "validation": {
+    "consultas_web": {
+      "min": 5,
+      "max": 70
+    },
+    "inversion_publicidad_soles": {
+      "min": 0,
+      "max": 1100
+    },
+    "campana_escolar": [
+      0,
+      1
+    ]
+  },
+  "train_test": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "train_rows": 88,
+    "test_rows": 22
+  }
+}
