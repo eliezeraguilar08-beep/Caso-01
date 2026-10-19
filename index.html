@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estimador educativo de pedidos semanales de kits de robótica.">
+  <title>Estimador de pedidos | Kits de robótica</title>
+  <link rel="stylesheet" href="estilos.css?v=4">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <span class="eyebrow">SENATI · MACHINE LEARNING</span>
+      <h1>Estimador de pedidos</h1>
+      <p>Estimación semanal de pedidos de kits de robótica.</p>
+    </header>
+
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Datos de la semana</h2>
+
+      <form id="estimador-form" novalidate>
+        <label for="consultas_web">Consultas web (5–70)</label>
+        <input id="consultas_web" name="consultas_web" type="number"
+               min="5" max="70" step="1" required inputmode="numeric">
+
+        <label for="inversion_publicidad_soles">Inversión publicitaria (S/ 0–1100)</label>
+        <input id="inversion_publicidad_soles" name="inversion_publicidad_soles"
+               type="number" min="0" max="1100" step="0.01" required inputmode="decimal">
+
+        <label for="campana_escolar">¿Hay campaña escolar?</label>
+        <select id="campana_escolar" name="campana_escolar">
+          <option value="0" selected>No (0)</option>
+          <option value="1">Sí (1)</option>
+        </select>
+
+        <button type="submit">Calcular estimación</button>
+      </form>
+
+      <div id="error" class="message error" role="alert" hidden></div>
+
+      <div id="resultado" class="message success" aria-live="polite" hidden>
+        <span>Pedidos estimados</span>
+        <strong id="resultado-valor"></strong>
+        <p>Es una estimación educativa basada en el modelo disponible.</p>
+      </div>
+
+      <div class="metrics" aria-label="Métricas del modelo">
+        <div><span>Error absoluto medio (MAE)</span><strong id="metrica-mae">—</strong></div>
+        <div><span>Coeficiente de determinación (R²)</span><strong id="metrica-r2">—</strong></div>
+      </div>
+
+      <p id="estado-modelo" class="note" role="status">Cargando el modelo…</p>
+    </section>
+
+    <footer>Proyecto educativo</footer>
+  </main>
+
+  <script src="app.js?v=4"></script>
+</body>
+</html>
